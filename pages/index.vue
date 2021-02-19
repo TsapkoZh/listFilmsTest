@@ -1,26 +1,17 @@
 <template>
   <div class="content">
-    <ContentList />
+    <FilmsList />
   </div>
 </template>
 
 <script>
-import ContentList from '~/components/ContentList.vue';
+import FilmsList from '~/components/FilmsList.vue';
 
 export default {
-  components: { ContentList },
+  components: { FilmsList },
 
   async fetch({ store }) {
-    if (store.getters['films/films'].length === 0) {
-      await store.dispatch('films/fetch')
-    }
+    await store.dispatch('films/fetch')
   },
-
-  data: () => ({
-    pageTitle: 'Home'
-  }),
 }
 </script>
-
-<style>
-</style>
