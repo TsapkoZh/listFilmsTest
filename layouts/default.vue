@@ -1,11 +1,21 @@
 <template>
   <div>
-    <Nuxt />
+    <main>
+      <div class="container">
+        <nuxt />
+      </div>
+    </main>
   </div>
 </template>
 
+<script>
+export default {
+}
+</script>
+
 <style>
 html {
+  background-color: #050A1D;
   font-family:
     'Source Sans Pro',
     -apple-system,
@@ -29,6 +39,10 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+li {
+  list-style-type: none;
 }
 
 .button--green {

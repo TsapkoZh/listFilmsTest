@@ -26,6 +26,9 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
+  // importing a custom loader. this will overwrite the default loader
+  loading: '~/components/LoadingBar.vue',
+
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
   ],
@@ -34,6 +37,14 @@ export default {
   modules: [
     '@nuxtjs/axios',
   ],
+
+  axios: {
+    proxy: true // Can be also an object with default options
+  },
+
+  proxy: {
+    '/api/': 'https://www.signalmediacorp.com',
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

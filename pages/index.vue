@@ -1,11 +1,17 @@
 <template>
-  <div class="container">
+  <div class="content">
+    <FilmsList />
   </div>
 </template>
 
 <script>
-export default {}
-</script>
+import FilmsList from '~/components/FilmsList.vue';
 
-<style>
-</style>
+export default {
+  components: { FilmsList },
+
+  async fetch({ store }) {
+    await store.dispatch('films/fetch')
+  },
+}
+</script>
